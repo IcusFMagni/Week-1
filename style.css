@@ -1,7 +1,7 @@
 table {
     border: solid darkred;
     background-color: rgba(136, 106, 106, 0.822);
-    width: 1000px;
+    width: 1002px;
     text-align: center;
 
 }
@@ -36,4 +36,20 @@ h1 {
     width: 1000px;
     text-align: right;
 
+}
+.entryForm1 {
+    border-width: 1px;
+    border-style: solid;
+    margin: 0px;
+    width: 1000px;
+    height: 30px;
+    border-bottom-color: (255, 254, 242);
+
+}.entryForm2 {
+    border-width: 1px;
+    border-style: solid;
+    margin: 0px;
+    width: 1000px;
+    height: 30px;
+    border-top-color: (255, 254, 242);
 }
