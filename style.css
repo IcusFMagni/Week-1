@@ -1,0 +1,38 @@
+table {
+    border: solid darkred;
+    background-color: rgba(136, 106, 106, 0.822);
+    width: 1000px;
+    text-align: center;
+
+}
+
+thead   {
+    background-color: darkred;
+    color: rgb(255, 254, 242);
+}
+
+body {
+    background-color: rgb(255, 254, 242);
+    font-family: "Lucida Console", Monaco , monospace;
+}
+
+button {
+    color: rgb(255, 254, 242) ;
+    background-color: rgb(192, 51, 0);
+    border-radius: 5px;
+}
+
+tbody{
+    background-color: rgb(255, 250, 219);
+}
+
+h1 {
+    color: rgb(255, 254, 242);
+    background-color: darkred;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: rgba(136, 106, 106, 0.822);
+    width: 1000px;
+    text-align: right;
+
+}
