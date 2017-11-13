@@ -1,6 +1,8 @@
 var employees = []
 var totalCost = 0;
-var empAdd = 0
+var empAdd = 0;
+var maxCost= 1000000;
+var t = 0;
 
 var firstNames = ['John', 'Sally', 'Salty', 'Amber', 'Quartz', "Bibity", 'Kattan', '0010001011' , 'Unit', 'Captain', 'Gonzo', 'Kermit', 'Oglafina', 'Bluster', 'Akbar', 'Jean Luc', 'William', 'Troi', 'Elana', 'Christo', 'Folstead'];
 var lastNames = ['Picard','Simpson', 'Ryker'];
@@ -47,9 +49,10 @@ function submitInfo () {
 function costCalc () {
     totalCost = 0
     for (var i = 0; i < employees.length; i++) {
-        totalCost += Number(employees[i].salary);
+        totalCost += Number(employees[i].salary/12);
         
     }
+    // screenDarkness();
 }
 
 function Info () {
@@ -85,7 +88,8 @@ function createRandom() {
     costCalc();
     $('#totalCost').html('Total Cost of Human Property: $'+totalCost)
     
-    employeePrint()
+    employeePrint();
+    // screenDarkness();
     
 }
 
@@ -96,5 +100,15 @@ function Random () {
     this.salary = Math.floor(Math.random()*10000000)/100;
     this.added = empAdd;
     empAdd++
+ 
 }
 
+function screenDarkness () {
+    if (totalCost > maxCost) {
+    $('body').css("background-color", "black")}
+    else {
+        var t = totalCost/maxCost;
+        $('body').css("background-color", "rgb("+t+"*255, "+t+"*254, "+t+"*242)");
+    };
+}
+    
