@@ -2,6 +2,10 @@ var employees = []
 var totalCost = 0;
 var empAdd = 0
 
+var firstNames = ['John', 'Sally', 'Salty', 'Amber', 'Quartz', "Bibity", 'Kattan', '0010001011' , 'Unit', 'Captain', 'Gonzo', 'Kermit', 'Oglafina', 'Bluster', 'Akbar', 'Jean Luc', 'William', 'Troi', 'Elana', 'Christo', 'Folstead'];
+var lastNames = ['Picard','Simpson', 'Ryker'];
+var titles = ['King', 'Queen', 'Ruler', 'Monarch', 'Catcher', 'Band Manager', 'Ringer of Bells', 'Keeper of Stones', 'Khaleesi', 'Warbler', 'Frog Catcher', 'Cat Scratcher', 'X-filer', 'Figure of an imagination'];
+
 $(document).ready(onReady);
 
 function onReady() {
@@ -14,8 +18,9 @@ function onReady() {
   
     $('.container').append($table);
 
-    $('body').on('click', ".deleter", deleteFunc)
-    $("#submitInfoInput").on('click', submitInfo)
+    $('body').on('click', ".deleter", deleteFunc);
+    $("#submitInfoInput").on('click', submitInfo);
+    $('#randomPerson').on('click', createRandom);
 }
 
 function deleteFunc () {
@@ -71,3 +76,25 @@ function employeePrint () {
 
 
 }
+
+
+function createRandom() {
+    var employee = new Random();
+    employees.push(employee)
+
+    costCalc();
+    $('#totalCost').html('Total Cost of Human Property: $'+totalCost)
+    
+    employeePrint()
+    
+}
+
+function Random () {
+    this.name = firstNames[Math.floor(Math.random()*(firstNames.length))] +' '+lastNames[Math.floor(Math.random()*(lastNames.length))];
+    this.id = Math.floor(Math.random()*6592);
+    this.title = titles[Math.floor(Math.random()*(titles.length))];
+    this.salary = Math.floor(Math.random()*10000000)/100;
+    this.added = empAdd;
+    empAdd++
+}
+
